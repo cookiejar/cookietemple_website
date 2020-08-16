@@ -1,0 +1,13 @@
+[Unit]
+Description=Gunicorn instance to serve cookietemple_website
+After=network.target
+
+[Service]
+User=cookietemple_dev
+Group=www-data
+WorkingDirectory=/home/cookietemple_dev/cookietemple_website
+Environment="PATH=/home/cookietemple_dev/cookietemple_website/dpenv/bin"
+ExecStart=/home/cookietemple_dev/cookietemple_website/dpenv/bin/gunicorn --workers 3 --bind unix:cookietemple_website.sock -m 007 cookietemple_website.app:app
+
+[Install]
+WantedBy=multi-user.target

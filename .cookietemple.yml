@@ -1,0 +1,26 @@
+cookietemple_version: '0.1.0 # <<COOKIETEMPLE_NO_BUMP>>'
+domain: web
+language: python
+project_slug: cookietemple_website
+project_slug_no_hyphen: cookietemple_website
+template_version: '0.0.1 # <<COOKIETEMPLE_NO_BUMP>>'
+template_handle: web-website-python
+github_username: cookiejar
+is_github_repo: true
+is_repo_private: false
+is_github_orga: true
+github_orga: cookiejar
+full_name: Imipenem
+email: philipp_ehm@protonmail.com
+project_name: cookietemple_website
+project_short_description: cookietemple_website. A cookietemple based .
+version: 0.1.0
+license: MIT
+webtype: website
+command_line_interface: Click
+testing_library: pytest
+web_framework: flask
+setup_type: basic
+use_frontend: false
+url: cookietemple.com
+vmusername: cookietemple_dev
