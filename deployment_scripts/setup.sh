@@ -4,23 +4,9 @@
 
 apt-get update
 
-apt-get install python-pip python-dev nginx -y
-
-pip3 install virtualenv
-
-cd ~
-
-git clone https://github.com/cookiejar/cookietemple_website
-
-cd cookietemple_website
-
-virtualenv dpenv
-
-source dpenv/bin/activate
-
 pip3 install gunicorn
 
-python setup.py clean --all install
+python3 setup.py clean --all install
 
 cp /home/cookietemple_dev/cookietemple_website/deployment_scripts/cookietemple_website.service \
 /etc/systemd/system/cookietemple_website.service
@@ -44,6 +30,6 @@ ufw allow 'Nginx Full'
 
 add-apt-repository ppa:certbot/certbot -y
 
-apt install python-certbot-nginx -y
+apt install python3-certbot-nginx -y
 
 certbot --nginx -d cookietemple.com -d www.cookietemple.com --non-interactive --agree-tos -m philipp_ehm@protonmail.com
