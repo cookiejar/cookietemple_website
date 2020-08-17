@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Templates Cookietemple</title>
-    <meta name="description" content="The Cookietemple Website">
+    <title>Templates of cookietemple</title>
+    <meta name="description" content="The cookietemple Website">
     <meta name="author" content="Philipp Ehmele">
 
     <link href="../static/assets/css/bootstrap.min.css" rel="stylesheet">
@@ -47,20 +47,20 @@
                 <a class="nav-link" href="/templates">Templates</a>
             </li>
             <li class="nav-item p-1">
-                <a class="nav-link" href="">Documentation</a>
+                <a class="nav-link" href="https://cookietemple.readthedocs.io">Documentation</a>
             </li>
             <li class="nav-item p-1 dropdown">
                 <a class="nav-link" href="/about" role="button" data-toggle="dropdown">About</a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/about">About Cookietemple</a>
+                    <a class="dropdown-item" href="/about">About cookietemple</a>
                     <a class="dropdown-item" href="/stats">Statistics</a>
                     <a class="dropdown-item" href="/code_of_conduct">Code of conduct</a>
-                    <a class="dropdown-item" href="/join">Join Cookietemple</a>
+                    <a class="dropdown-item" href="/join">Join cookietemple</a>
                 </div>
             </li>
         </ul>
         <a class="d-none d-lg-block btn btn-success" style="position:absolute; right: 1rem;" href="/join">
-            Join Cookietemple
+            Join cookietemple
         </a>
     </div>
 </nav>
@@ -69,7 +69,7 @@
     <div class="mainpage-heading">
         <div class="container">
             <h1 class="display-3">Templates</h1>
-            <p class="lead">Browse the <strong>7</strong> templates that are currently available as part of Cookietemple.</p></div>
+            <p class="lead">Browse the <strong>8</strong> templates that are currently available as part of cookietemple.</p></div>
     </div>
 
     <div class="triangle triangle-down"></div>
@@ -101,6 +101,10 @@
                     Web
                     <span class="badge badge-light d-none d-lg-inline">1</span>
                 </button>
+                <button type="button" class="btn btn-sm btn-outline-success active" data-target=".pipeline-lib">
+                    Lib
+                    <span class="badge badge-light d-none d-lg-inline">1</span>
+                </button>
                 <button type="button" class="btn btn-sm btn-outline-success active" data-target=".pipeline-pub">
                     Pub
                     <span class="badge badge-light d-none d-lg-inline">1</span>
@@ -116,7 +120,7 @@
                     <h3 class="card-title mb-0">
                         <a href="" class="pipeline-name">
                             <span class="d-none d-lg-inline">Cookietemple </span>cli-python </a>
-                        <small class="status-icon text-success ml-2 fas fa-check" title="This template is shipped with Cookietemple, tested and good to go."
+                        <small class="status-icon text-success ml-2 fas fa-check" title="This template is shipped with cookietemple, tested and good to go."
                                data-toggle="tooltip"></small>
                     </h3>
                     <p class="topics mb-0">
@@ -132,7 +136,7 @@
                            class="btn btn-sm btn-outline-success">
                             Version <strong>1.0.0</strong>
                         </a> &nbsp;
-                        <small class="text-black-50 publish-date" data-pubdate="1587720362">Shipped in initial Cookietemple release</small>
+                        <small class="text-black-50 publish-date" data-pubdate="1587720362">Shipped in initial cookietemple release</small>
                     </p>
                 </div>
             </div>
@@ -142,7 +146,7 @@
                     <h3 class="card-title mb-0">
                         <a href="" class="pipeline-name">
                             <span class="d-none d-lg-inline">Cookietemple </span>cli-java </a>
-                        <small class="status-icon text-success ml-2 fas fa-check" title="This template is shipped with Cookietemple, tested and good to go."
+                        <small class="status-icon text-success ml-2 fas fa-check" title="This template is shipped with cookietemple, tested and good to go."
                                data-toggle="tooltip"></small>
                     </h3>
                     <p class="topics mb-0">
@@ -151,36 +155,38 @@
                         <a style="color: #1e6bb8" class="badge pipeline-topic">java</a>
                         <a style="color: #1e6bb8" class="badge pipeline-topic">picocli</a>
                     </p>
-                    <p class="card-text mb-0 mt-2">A JVM Java CLI Template with bla bla bla...</p>
+                    <p class="card-text mb-0 mt-2">A commandline application tool written in Java using the Picocli framework.
+                        The commandline application is built using GraalVM, which results in platform dependent binaries.
+                        Multiplatform Github workflows ensure that binaries are built for every platform and easily accessible as Github artifacts..</p>
                     <p class="mb-0 mt-2 dl-btn-row">
                         <a href="" target="_blank" class="btn btn-sm btn-outline-success">
                             Version <strong>1.0.0</strong>
                         </a> &nbsp;
-                        <small class="text-black-50 publish-date" data-pubdate="1587720362">Shipped in initial Cookietemple release</small>
+                        <small class="text-black-50 publish-date" data-pubdate="1587720362">Shipped in initial cookietemple release</small>
                     </p>
                 </div>
             </div>
 
-            <div class="card card_deck_card pipeline pipeline-cli">
+             <div class="card card_deck_card pipeline pipeline-lib">
                 <div class="card-body clearfix">
                     <h3 class="card-title mb-0">
                         <a href="" class="pipeline-name">
-                            <span class="d-none d-lg-inline">Cookietemple </span>cli-kotlin </a>
-                        <small class="status-icon text-success ml-2 fas fa-check" title="This template is shipped with Cookietemple, tested and good to go."
+                            <span class="d-none d-lg-inline">Cookietemple </span>lib cpp</a>
+                        <small class="status-icon text-success ml-2 fas fa-check" title="This template is shipped with cookietemple, tested and good to go."
                                data-toggle="tooltip"></small>
                     </h3>
                     <p class="topics mb-0">
-                        <a style="color: #1e6bb8" class="badge pipeline-topic">cli</a>
-                        <a style="color: #1e6bb8" class="badge pipeline-topic">jvm</a>
-                        <a style="color: #1e6bb8" class="badge pipeline-topic">kotlin</a>
-                        <a style="color: #1e6bb8" class="badge pipeline-topic">picocli</a>
+                        <a style="color: #1e6bb8" class="badge pipeline-topic">lib</a>
+                        <a style="color: #1e6bb8" class="badge pipeline-topic">c++</a>
+                        <a style="color: #1e6bb8" class="badge pipeline-topic">cmake</a>
                     </p>
-                    <p class="card-text mb-0 mt-2">A Kotlin CLI bal bla bla</p>
+                    <p class="card-text mb-0 mt-2">A template for modern C++ projects - both executables and libraries - using CMake, Clang-Format, CI, unit
+                        testing and more, with support for downstream inclusion.</p>
                     <p class="mb-0 mt-2 dl-btn-row">
                         <a href="" target="_blank" class="btn btn-sm btn-outline-success">
                             Version <strong>1.0.0</strong>
                         </a> &nbsp;
-                        <small class="text-black-50 publish-date" data-pubdate="1587720362">Shipped in initial Cookietemple release</small>
+                        <small class="text-black-50 publish-date" data-pubdate="1587720362">Shipped in initial cookietemple release</small>
                     </p>
                 </div>
             </div>
@@ -190,7 +196,7 @@
                     <h3 class="card-title mb-0">
                         <a href="" class="pipeline-name">
                             <span class="d-none d-lg-inline">Cookietemple </span>web-website-python </a>
-                        <small class="status-icon text-success ml-2 fas fa-check" title="This template is shipped with Cookietemple, tested and good to go."
+                        <small class="status-icon text-success ml-2 fas fa-check" title="This template is shipped with cookietemple, tested and good to go."
                                data-toggle="tooltip"></small>
                     </h3>
                     <p class="topics mb-0">
@@ -206,7 +212,7 @@
                         <a href="" target="_blank" class="btn btn-sm btn-outline-success">
                             Version <strong>1.0.0</strong>
                         </a> &nbsp;
-                        <small class="text-black-50 publish-date" data-pubdate="1587720362">Shipped in initial Cookietemple release</small>
+                        <small class="text-black-50 publish-date" data-pubdate="1587720362">Shipped in initial cookietemple release</small>
                     </p>
                 </div>
             </div>
@@ -216,7 +222,7 @@
                     <h3 class="card-title mb-0">
                         <a href="" class="pipeline-name">
                             <span class="d-none d-lg-inline">Cookietemple </span>GUI-Java </a>
-                        <small class="status-icon text-success ml-2 fas fa-check" title="This template is shipped with Cookietemple, tested and good to go."
+                        <small class="status-icon text-success ml-2 fas fa-check" title="This template is shipped with cookietemple, tested and good to go."
                                data-toggle="tooltip"></small>
                     </h3>
                     <p class="topics mb-0">
@@ -225,36 +231,12 @@
                         <a style="color: #1e6bb8" class="badge pipeline-topic">java</a>
                         <a style="color: #1e6bb8" class="badge pipeline-topic">javaFX</a>
                     </p>
-                    <p class="card-text mb-0 mt-2">GUI Java Tenmplate bla bla</p>
+                    <p class="card-text mb-0 mt-2">GUI Java Template</p>
                     <p class="mb-0 mt-2 dl-btn-row">
                         <a href="" target="_blank" class="btn btn-sm btn-outline-success">
                             Version <strong>1.0.0</strong>
                         </a> &nbsp;
-                        <small class="text-black-50 publish-date" data-pubdate="1587720362">Shipped in initial Cookietemple release</small>
-                    </p>
-                </div>
-            </div>
-
-            <div class="card card_deck_card pipeline pipeline-gui">
-                <div class="card-body clearfix">
-                    <h3 class="card-title mb-0">
-                        <a href="" class="pipeline-name">
-                            <span class="d-none d-lg-inline">Cookietemple </span>GUI-Kotlin</a>
-                        <small class="status-icon text-success ml-2 fas fa-check" title="This template is shipped with Cookietemple, tested and good to go."
-                               data-toggle="tooltip"></small>
-                    </h3>
-                    <p class="topics mb-0">
-                        <a style="color: #1e6bb8" class="badge pipeline-topic">gui</a>
-                        <a style="color: #1e6bb8" class="badge pipeline-topic">jvm</a>
-                        <a style="color: #1e6bb8" class="badge pipeline-topic">kotlin</a>
-                        <a style="color: #1e6bb8" class="badge pipeline-topic">tornadoFX</a>
-                    </p>
-                    <p class="card-text mb-0 mt-2">GUI Kotlin Tenmplate bla bla</p>
-                    <p class="mb-0 mt-2 dl-btn-row">
-                        <a href="" target="_blank" class="btn btn-sm btn-outline-success">
-                            Version <strong>1.0.0</strong>
-                        </a> &nbsp;
-                        <small class="text-black-50 publish-date" data-pubdate="1587720362">Shipped in initial Cookietemple release</small>
+                        <small class="text-black-50 publish-date" data-pubdate="1587720362">Shipped in initial cookietemple release</small>
                     </p>
                 </div>
             </div>
@@ -264,7 +246,7 @@
                     <h3 class="card-title mb-0">
                         <a href="" class="pipeline-name">
                             <span class="d-none d-lg-inline">Cookietemple </span>pub-thesis </a>
-                        <small class="status-icon text-success ml-2 fas fa-check" title="This template is shipped with Cookietemple, tested and good to go."
+                        <small class="status-icon text-success ml-2 fas fa-check" title="This template is shipped with cookietemple, tested and good to go."
                                data-toggle="tooltip"></small>
                     </h3>
                     <p class="topics mb-0">
@@ -279,7 +261,7 @@
                         <a href="" target="_blank" class="btn btn-sm btn-outline-success">
                             Version <strong>1.0.0</strong>
                         </a> &nbsp;
-                        <small class="text-black-50 publish-date" data-pubdate="1587720362">Shipped in initial Cookietemple release</small>
+                        <small class="text-black-50 publish-date" data-pubdate="1587720362">Shipped in initial cookietemple release</small>
                     </p>
                 </div>
             </div>
@@ -324,11 +306,11 @@
                 </ul>
             </div>
             <div class="col-6 col-md" style="margin-right: 20%">
-                <h5>About Cookietemple</h5>
+                <h5>About cookietemple</h5>
                 <ul class="list-unstyled">
-                    <li><a href="/about">About Cookietemple</a></li>
+                    <li><a href="/about">About cookietemple</a></li>
                     <li><a href="/stats">Statistics</a></li>
-                    <li><a href="/join" class="mt-1 btn btn-outline-success">Join Cookietemple</a></li>
+                    <li><a href="/join" class="mt-1 btn btn-outline-success">Join cookietemple</a></li>
                 </ul>
             </div>
         </div>

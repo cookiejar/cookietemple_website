@@ -28,10 +28,9 @@ def about():
     return render_template('about.html')
 
 
-# Uncomment for now till implementation
-# @bp.route('/stats')
-# def stats():
-#   return render_template('stats.html')
+@bp.route('/stats')
+def stats():
+    return render_template('stats.html')
 
 
 @bp.route('/code_of_conduct')
