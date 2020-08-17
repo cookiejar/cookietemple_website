@@ -5,7 +5,9 @@ Credits
 Development Lead
 ----------------
 
-* Imipenem <philipp_ehm@protonmail.com>
+* Philipp Ehmele <philipp_ehm@protonmail.com>
+
+* Lukas Heumos <
 
 Contributors
 ------------

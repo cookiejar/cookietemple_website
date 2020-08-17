@@ -24,17 +24,14 @@ cookietemple_website
 
 
 
-cookietemple_website. A cookietemple based .
+The cookietemple website. A cookietemple based flask project.
 
 
 * Free software: MIT
 * Documentation: https://cookietemple-website.readthedocs.io.
 
-
-Features
---------
-
-* TODO
+This project contains the code for the cookietemple project website. Take a look at the site at
+https://cookietemple.com.
 
 Credits
 -------

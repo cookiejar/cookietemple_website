@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>About Cookietemple</title>
+    <meta name="description" content="The Cookietemple Website">
+    <meta name="author" content="Philipp Ehmele">
+
+    <link href="../static/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/assets/css/code_highlighting/github.css" rel="stylesheet">
+    <!-- Other JS -->
+    <script src="../static/assets/js/jquery-3.4.1.min.js"></script>
+    <script src="../static/assets/js/popper.min.js"></script>
+    <script src="../static/assets/js/bootstrap.min.js"></script>
+    <script src="../static/assets/js/highlight.pack.js"></script>
+
+    <link href="../static/assets/css/jquery-ui.min.css" rel="stylesheet">
+    <script src="../static/assets/js/jquery-ui.min.js"></script>
+
+    <link href="../static/assets/css/cookietemple.css" rel="stylesheet">
+    <link href="../static/assets/css/cookietemple-dark.css" rel="stylesheet" id="theme-stylesheet">
+    <script src="../static/assets/js/cookietemple.js"></script>
+
+    <style type="text/css">
+        .zoomin img {
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            -webkit-transition: all 2s ease;
+            -moz-transition: all 2s ease;
+            -ms-transition: all 2s ease;
+            transition: all 2s ease;
+        }
+
+        .zoomin figure figcaption {
+            width: 200px;
+            font-size: small;
+            color: #005fff;
+            font-family: "Maven Pro", sans-serif;
+            opacity: 1;
+            visibility: visible;
+            -webkit-transition: visibility 0s, opacity 0.5s linear;
+            transition: visibility 0s, opacity 0.5s linear;
+        }
+
+        .zoomin figure:hover img {
+            width: 250px;
+            height: 250px;
+        }
+
+        .zoomin figure:hover figcaption {
+            font-size: xx-small;
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        @media screen and (max-width: 540px) {
+            .zoomin img:hover {
+                width: 220px;
+                height: 220px;
+            }
+        }
+
+        @media screen and (max-width: 510px) {
+            .zoomin img {
+                width: 180px;
+                height: 180px;
+            }
+
+            .zoomin img:hover {
+                width: 210px;
+                height: 210px;
+            }
+        }
+
+        @media screen and (max-width: 490px) {
+            .zoomin {
+                display: flex;
+                margin-left: 50%;
+                margin-right: -80%;
+            }
+
+            .zoomin img {
+                width: 200px;
+                height: 200px;
+            }
+
+            .zoomin img:hover {
+                width: 220px;
+                height: 220px;
+            }
+        }
+
+        @media screen and (max-width: 440px) {
+            .zoomin {
+                margin-left: 40%;
+                margin-right: -80%;
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            .zoomin {
+                margin-left: 40%;
+                margin-right: -80%;
+            }
+
+            .zoomin img {
+                width: 180px;
+                height: 180px;
+            }
+
+            .zoomin img:hover {
+                width: 200px;
+                height: 200px;
+            }
+        }
+
+        @media screen and (max-width: 360px) {
+            .zoomin {
+                margin-left: 30%;
+                margin-right: -80%;
+            }
+        }
+
+        @media screen and (max-width: 330px) {
+            .zoomin {
+                margin-left: 20%;
+                margin-right: -80%;
+            }
+        }
+
+        .zoomin p {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            color: white;
+            margin-bottom: 5px;
+            font-family: sans-serif;
+            opacity: 1;
+            visibility: visible;
+            -webkit-transition: visibility 0s, opacity 0.5s linear;
+            transition: visibility 0s, opacity 0.5s linear;
+        }
+
+        .zoomin:hover p {
+            visibility: hidden;
+        }
+
+
+        .wrap_img:hover img {
+            -webkit-filter: blur(13px);
+            -moz-filter: blur(13px);
+            -o-filter: blur(13px);
+            -ms-filter: blur(13px);
+            filter: blur(13px);
+
+        }
+
+        .wrap_img:hover img:hover {
+            -webkit-filter: blur(0px);
+            -moz-filter: blur(0px);
+            -o-filter: blur(0px);
+            -ms-filter: blur(0px);
+            filter: blur(0px);
+        }
+
+
+    </style>
+
+    <script>window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'UA-68098153-2'); </script>
+
+
+</head>
+<body>
+
+<nav class="navbar fixed-top navbar-expand-md navbar-light site-nav">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+            aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-md-center" id="navbarCollapse">
+        <ul class="navbar-nav">
+            <li class="nav-item p-1">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item p-1">
+                <a class="nav-link" href="/templates">Templates</a>
+            </li>
+            <li class="nav-item p-1">
+                <a class="nav-link" href="">Documentation</a>
+            </li>
+            <li class="nav-item p-1 dropdown">
+                <a class="nav-link" href="/about" role="button" data-toggle="dropdown">About</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/about">About Cookietemple</a>
+                    <a class="dropdown-item" href="/stats">Statistics</a>
+                    <a class="dropdown-item" href="/code_of_conduct">Code of conduct</a>
+                    <a class="dropdown-item" href="/join">Join Cookietemple</a>
+                </div>
+            </li>
+        </ul>
+        <a class="d-none d-lg-block btn btn-success" style="position:absolute; right: 1rem;" href="/join">
+            Join Cookietemple
+        </a>
+    </div>
+</nav>
+
+
+<div class="mainpage" style="overflow-x: hidden">
+    <div class="mainpage-heading">
+        <div class="container">
+            <h1 class="display-3">About Cookietemple</h1>
+            <p class="lead">Details about the Cookietemple project - who is involved and how it was started.</p></div>
+    </div>
+
+    <div class="triangle triangle-down"></div>
+
+    <div class="container main-content">
+        <h2 id="core">Core team</h2>
+        <p>The core team members who administer the Cookietemple project are listed below:</p>
+
+        <div class="col-md-9">
+            <div class="wrap_img">
+                <div class="row">
+                    <div class="outer">
+                        <div class="inner">
+                            <div class="col-md-1">
+                                <div class="zoomin">
+                                    <figure>
+                                        <a href="https://github.com/Zethson">
+                                            <img src="../static/assets/img/about_core_team/LulasGurkeCropped.png" alt='missing'/>
+                                            <figcaption><a style="visibility: hidden">move</a>Lukas "Zeth" Heumos</figcaption>
+                                        </a>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="outer">
+                        <div class="inner">
+                            <div class="col-md-1">
+                                <div class="zoomin">
+                                    <figure>
+                                        <a href="https://github.com/Imipenem">
+                                            <img src="../static/assets/img/about_core_team/PhilCropped.png" alt='missing'/>
+                                            <figcaption><a style="visibility: hidden">move</a>Philipp "Farwent" Ehmele</figcaption>
+                                        </a>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <p>We regularly review members - if you'd like to be involved, join our
+                <a href="https://discord.com/channels/708008788505919599/708008788505919602">Discord</a> server.</p>
+            <p>All Cookietemple community members are expected to adhere to our <a href="/code_of_conduct">code of conduct</a>.</p>
+            <h2 id="history"><a href="#history" class="header-link"><span class="fas fa-link"></span></a>History</h2>
+            <p>Cookietemple was initially developed by Lukas Heumos (<a href="https://github.com/Zethson">GitHub</a>/<a href="https://twitter.com/LukasHeumos">Twitter</a>)
+                and
+                Philipp Ehmele (<a href="https://github.com/Imipenem">GitHub</a>/<a href="https://twitter.com/1207_philipp">Twitter</a>) since the beginning of
+                2020.</p>
+            <p>We noticed the lack of standardization in projects structure even in the same domain/application space. This makes it harder, especially for
+                new developers, to join existing projects and work together in a collaborative environment.</p>
+            <p>It was our aim to contribute Cookietemple as a tool to tackle this problem to the open-source community. The inital release has been in May 2020
+                and we're planning to consistently develope Cookietemple further together with the open-source community.</p>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 col-md-4">
+                    <small class="d-block mb-3">Cookietemple</small>
+                    <small class="d-block mb-3">
+                        Website by <a href="https://twitter.com/1207_philipp">Philipp Ehmele</a>.
+                        <a href="http://getbootstrap.com/">Bootstrap</a> CSS framework,
+                        <a href="http://jquery.com/">jQuery</a> JS and syntax colouring
+                        with <a href="https://highlightjs.org/">highlight.js</a>.
+                    </small>
+                    <div class="d-md-flex">
+                        <div class="btn-toolbar mb-3 mr-4" role="toolbar">
+                        </div>
+
+                        <div class="social-icons mb-3">
+                            <a href="https://discord.com/channels/708008788505919599/708008788505919602" target="_blank" title="Discord" data-toggle="tooltip">
+                                <img src="../static/assets/img/icons/discord.svg"/>
+                            </a>
+                            <a href="https://github.com/zethson/cookietemple" target="_blank" class="social-github" title="GitHub" data-toggle="tooltip">
+                                <img src="../static/assets/img/icons/github_icon.svg"/>
+                            </a>
+                            <a href="https://twitter.com/cookietemple" target="_blank" title="twitter" data-toggle="tooltip">
+                                <img src="../static/assets/img/icons/twitter_icon.svg"/>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-6 col-md">
+                    <h5>Getting Started</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/templates">Available templates</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md" style="margin-right: 20%">
+                    <h5>About Cookietemple</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/about">About Cookietemple</a></li>
+                        <li><a href="/stats">Statistics</a></li>
+                        <li><a href="/join" class="mt-1 btn btn-outline-success">Join Cookietemple</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
