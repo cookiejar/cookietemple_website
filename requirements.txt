@@ -1,5 +1,5 @@
 
 Click==7.1.2
 Flask==1.1.2
-gevent==1.4.0
+gevent==20.6.2
 
