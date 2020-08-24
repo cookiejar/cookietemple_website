@@ -25,7 +25,7 @@ cookietemple_website
 
 
 
-The cookietemple website. A cookietemple based flask project.
+This repository contains the code for the `cookietemple website <https://cookietemple.com>`_.
 
 
 * Free software: MIT
