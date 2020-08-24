@@ -34,41 +34,12 @@
 
 <body>
 <nav class="navbar fixed-top navbar-expand-md navbar-light site-nav">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
-            aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-md-center" id="navbarCollapse">
-        <ul class="navbar-nav">
-            <li class="nav-item p-1">
-                <a class="nav-link" href="/">Home</a>
-            </li>
-            <li class="nav-item p-1">
-                <a class="nav-link" href="/templates">Templates</a>
-            </li>
-            <li class="nav-item p-1">
-                <a class="nav-link" href="https://cookietemple.readthedocs.io">Documentation</a>
-            </li>
-            <li class="nav-item p-1 dropdown">
-                <a class="dropdown-toggle nav-link" href="/about" role="button" data-toggle="dropdown">About<b class="caret"></b></a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/about">About cookietemple</a>
-                    <a class="dropdown-item" href="/stats">Statistics</a>
-                    <a class="dropdown-item" href="/code_of_conduct">Code of conduct</a>
-                    <a class="dropdown-item" href="/join">Join cookietemple</a>
-                </div>
-            </li>
-        </ul>
-        <a class="d-none d-lg-block btn btn-success" style="position:absolute; right: 1rem;" href="/join">
-            Join cookietemple
-        </a>
-    </div>
-</nav>
-<div class="homepage-header">
+{% include 'header.html' %}
+</nav><div class="homepage-header">
     <div class="homepage-header-contents col-md-5">
         <p class="lead" style="font-family: 'Maven Pro', sans-serif">An open source project to create state-of-the art templates for all domains.</p>
         <div class="hompage-cta-flex">
-            <a class="hompage-cta" href="/templates">View Templates</a>
+            <a class="hompage-cta" href="/templates" style="color: #FFFFFF">View Templates</a>
         </div>
     </div>
 </div>
@@ -203,66 +174,22 @@ cookietemple create
         <div class="col-md-4 px-md-5 mb-5 mb-md-0">
             <h3>See what's available</h3>
             <p>Check out the available templates to see if we have what you need. Each comes with release details, keywords and a description.</p>
-            <a class="btn btn-lg btn-success arrow-hover" href="/templates"><span>Available templates</span></a>
+            <a class="btn btn-lg btn-success arrow-hover" href="/templates"><span style="color: #FFFFFF">Available templates</span></a>
         </div>
         <div class="col-md-4 px-md-5 mb-5 mb-md-0">
             <h3>Need help?</h3>
             <p>Checkout our public channels and join them to get help and see whats going on over there.<br><a style="visibility: hidden;">same_height</a></p>
-            <a class="btn btn-lg btn-success arrow-hover" href="/join"><span>Join cookietemple</span></a>
+            <a class="btn btn-lg btn-success arrow-hover" href="/join"><span style="color: #FFFFFF">Join cookietemple</span></a>
         </div>
         <div class="col-md-4 px-md-5 mb-5 mb-md-0">
             <h3>Get into the code</h3>
             <p>If you're interested in contributing to cookietemple, take a look at the developer documentation to see what's required.</p>
-            <a class="btn btn-lg btn-success arrow-hover" href="https://cookietemple.readthedocs.io"><span>Contribute</span></a>
+            <a class="btn btn-lg btn-success arrow-hover" href="https://cookietemple.readthedocs.io"><span style="color: #FFFFFF">Contribute</span></a>
         </div>
     </div>
 </div>
-
 <footer class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-6 col-md-4">
-                <small class="d-block mb-3">Cookietemple</small>
-                <small class="d-block mb-3">
-                    Website by <a href="https://twitter.com/1207_philipp">Philipp Ehmele</a>.
-                    <a href="http://getbootstrap.com/">Bootstrap</a> CSS framework,
-                    <a href="http://jquery.com/">jQuery</a> JS and syntax colouring
-                    with <a href="https://highlightjs.org/">highlight.js</a>.
-                </small>
-                <div class="d-md-flex">
-                    <div class="btn-toolbar mb-3 mr-4" role="toolbar">
-                    </div>
-
-                    <div class="social-icons mb-3">
-                        <a href="https://discord.com/channels/708008788505919599/708008788505919602" target="_blank" title="Discord" data-toggle="tooltip">
-                            <img src="../static/assets/img/icons/discord.svg"/>
-                        </a>
-                        <a href="https://github.com/zethson/cookietemple" target="_blank" class="social-github" title="GitHub" data-toggle="tooltip">
-                            <img src="../static/assets/img/icons/github_icon.svg"/>
-                        </a>
-                        <a href="https://twitter.com/cookietemple" target="_blank" title="twitter" data-toggle="tooltip">
-                            <img src="../static/assets/img/icons/twitter_icon.svg"/>
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-            <div class="col-6 col-md">
-                <h5>Getting Started</h5>
-                <ul class="list-unstyled">
-                    <li><a href="/templates">Available templates</a></li>
-                </ul>
-            </div>
-            <div class="col-6 col-md" style="margin-right: 20%">
-                <h5>About cookietemple</h5>
-                <ul class="list-unstyled">
-                    <li><a href="/about">About cookietemple</a></li>
-                    <li><a href="/stats">Statistics</a></li>
-                    <li><a href="/join" class="mt-1 btn btn-outline-success">Join cookietemple</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
+    {% include 'footer.html' %}
 </footer>
 </body>
 </html>

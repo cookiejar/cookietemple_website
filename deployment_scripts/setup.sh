@@ -2,12 +2,6 @@
 # Reference:
 # https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-gunicorn-and-nginx-on-ubuntu-18-04
 
-apt-get update
-
-pip3 install gunicorn
-
-python3 setup.py clean --all install
-
 cp /home/cookietemple_dev/cookietemple_website/deployment_scripts/cookietemple_website.service \
 /etc/systemd/system/cookietemple_website.service
 
