@@ -1,6 +1,4 @@
 server {
-    server_name cookietemple.com www.cookietemple.com;
-
     location / {
         include proxy_params;
         proxy_pass http://unix:/home/cookietemple_dev/cookietemple_website/cookietemple_website.sock;

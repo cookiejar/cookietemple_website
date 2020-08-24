@@ -10,4 +10,29 @@ def root():
 
 @bp.route('/index')
 def index():
-    return render_template('basic_index.html')
+    return render_template('index.html')
+
+
+@bp.route('/templates')
+def dev():
+    return render_template('templates.html')
+
+
+@bp.route('/join')
+def join():
+    return render_template('join.html')
+
+
+@bp.route('/about')
+def about():
+    return render_template('about.html')
+
+
+@bp.route('/stats')
+def stats():
+    return render_template('stats.html')
+
+
+@bp.route('/code_of_conduct')
+def code_of_conduct():
+    return render_template('code_of_conduct.html')
