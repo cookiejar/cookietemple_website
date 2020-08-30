@@ -23,11 +23,6 @@ def join():
     return render_template('join.html')
 
 
-@bp.route('/about')
-def about():
-    return render_template('about.html')
-
-
 @bp.route('/stats')
 def stats():
     return render_template('stats.html')
@@ -36,3 +31,13 @@ def stats():
 @bp.route('/code_of_conduct')
 def code_of_conduct():
     return render_template('code_of_conduct.html')
+
+
+@bp.route('/ourstory')
+def story():
+    return render_template('ourstory.html')
+
+
+@bp.route('/showoff')
+def showoff():
+    return render_template('showoff.html')
