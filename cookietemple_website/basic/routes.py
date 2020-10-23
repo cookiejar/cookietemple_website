@@ -1,4 +1,5 @@
 from flask import render_template, redirect, url_for
+import json
 
 from cookietemple_website.basic import bp
 
@@ -25,7 +26,9 @@ def join():
 
 @bp.route('/stats')
 def stats():
-    return render_template('stats.html')
+    with open('commits_per_day.json', 'r') as file:
+        commits = json.load(file)
+    return render_template('stats.html', commits_data=json.dumps(commits, default=lambda x: x.__dict__))
 
 
 @bp.route('/code_of_conduct')
