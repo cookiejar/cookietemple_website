@@ -54,90 +54,103 @@
 <p style="visibility: hidden">t</p>
 <p style="visibility: hidden">t</p>
 <p style="visibility: hidden">t</p>
-<p>
-    This site should present some interesting stats about the cookietemple project and the cookiejar organization in general.
-    An example would be the number of commits per contributor for example.
-    Due to time limitations we could not get to implement this just yet. However, we are always happy to receive pull requests or ideas for this site!
-</p>
-<div style="width:75%;">
-    <canvas id="canvas"></canvas>
+
+<div class="row">
+  <div class="col-lg-6">
+
+    <h2 class="mt-0" id="blob"><a href="#canvas" class="header-link"><span class="fas fa-link" aria-hidden="true"></span></a>Header</h2>
+    <p>Some text here.</p>
+<div class="card bg-light mt-4">
+      <div class="card-body">
+        <canvas id="canvas" height="200"></canvas>
+        <p class="card-text small text-muted mt-3 mb-1"><i class="fas fa-info-circle"></i>Some info</p>
+        <p class="card-text small text-muted mb-1"><i class="fas fa-exclamation-triangle"></i>Some alert</p>
+        <p class="card-text small text-muted">
+          <a href="#" data-target="" class="dl_plot_svg text-muted"><i class="fas fa-download"></i> SVGDownNotWork</a> &nbsp;/&nbsp; <a href="#" data-target="slack" class="reset_chart_zoom text-muted"><i class="fas fa-search-minus"></i> Reset zoomNOTWORK</a>
+        </p>
+      </div>
+    </div>
+  </div>
 </div>
 <script type="text/javascript">
-    const parsedData = JSON.parse('{{ commits_data|safe }}');
+    const commit_statistics = JSON.parse('{{ commits_data|safe }}');
     dates_of_commits = []
     number_of_commits = []
-    for(commit_date in parsedData){
+    for (commit_date in commit_statistics) {
         dates_of_commits.push(commit_date)
-        number_of_commits.push(parsedData[commit_date])
+        number_of_commits.push(commit_statistics[commit_date])
     }
-    alert(dates_of_commits)
-    alert(number_of_commits)
 </script>
 
 <script>
-
-
     var config = {
         type: 'line',
+        fill: 'origin',
         data: {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            labels: dates_of_commits,
             datasets: [{
-                label: 'My First dataset',
-                backgroundColor: 'red',
-                borderColor: 'red',
-                data: [
-                    2, 3, 4, 5, 6, 7, 8
-                ],
-                fill: false,
-            }, {
-                label: 'My Second dataset',
-                fill: false,
-                backgroundColor: 'blue',
-                borderColor: 'blue',
-                data: [
-                    1, 2, 3, 4, 5, 6, 7
-                ],
+                label: 'Commits to cookietemple',
+                borderColor: 'green',
+                pointRadius: 0,
+                data: number_of_commits,
+                fill: true,
             }]
         },
         options: {
             responsive: true,
             title: {
                 display: true,
-                text: 'Chart.js Line Chart'
+                fontSize: 16,
+                text: 'Commits to cookietemple'
             },
             tooltips: {
                 mode: 'index',
                 intersect: false,
             },
+            plugins: {
+                zoom: {
+                    zoom: {
+                        enabled: true,
+                        drag: true,
+                        mode: 'x',
+                        speed: 0.05
+                    }
+                }
+            },
             hover: {
                 mode: 'nearest',
                 intersect: true
             },
+            elements: {
+                line: {
+                    borderWidth: 1,
+                    tension: 0
+                }
+            },
             scales: {
-                xAxes: [{
-                    display: true,
-                    scaleLabel: {
-                        display: true,
-                        labelString: 'Month'
-                    }
-                }],
                 yAxes: [{
                     display: true,
                     scaleLabel: {
                         display: true,
-                        labelString: 'Value'
+                        labelString: 'Commits'
                     }
-                }]
+                }],
+                xAxes: [{
+                    type: 'time',
+                    time: {minUnit: 'year'}
+                }],
+            },
+            legend: {
+                display: false
             }
+
         }
     };
-
     window.onload = function () {
         var ctx = document.getElementById('canvas').getContext('2d');
         window.myLine = new Chart(ctx, config);
     };
 </script>
-<p>Flak</p>
 <footer class="footer">
     {% include 'footer.html' %}
 </footer>
