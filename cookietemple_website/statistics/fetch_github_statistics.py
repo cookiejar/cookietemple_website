@@ -19,7 +19,6 @@ def fetch_ct_pr_stats() -> None:
 
     for pr in pull_requests:
         pr_is_closed = pr.state == 'closed'
-        # add the creation date of each pr
         pr_created_date = pr.created_at
         created_date = str(pr_created_date).split(' ')[0]
         # if pr is already closed, add a closed date
@@ -36,8 +35,22 @@ def fetch_ct_pr_stats() -> None:
         except KeyError:
             open_pr_dict[created_date] = 1
 
+    open_pr_per_date = dict()
+    for pr in pull_requests:
+        if pr.state == 'closed':
+            pr_created_date = pr.created_at
+            created_date = str(pr_created_date).split(' ')[0]
+            pr_closed_date = pr.closed_at
+            closed_date = str(pr_closed_date).split(' ')[0]
+            for date in open_pr_dict.keys():
+                if created_date <= date < closed_date:
+                    try:
+                        open_pr_per_date[date] += 1
+                    except KeyError:
+                        open_pr_per_date[date] = 1
+
     # sort the open and closed prs by date in ascending order
-    open_pr_list = sorted(list(open_pr_dict.items()))
+    open_pr_list = sorted(list(open_pr_per_date.items()))
     closed_pr_list = sorted(list(closed_pr_dict.items()))
     # convert to dict for easier JSON dumping
     open_pr_dict = dict(open_pr_list)
