@@ -28,7 +28,12 @@ def join():
 def stats():
     with open('commits_per_day.json', 'r') as file:
         commits = json.load(file)
-    return render_template('stats.html', commits_data=json.dumps(commits, default=lambda x: x.__dict__))
+    with open('open_prs_per_day.json', 'r') as file:
+        open_prs = json.load(file)
+    with open('closed_prs_per_day.json', 'r') as file:
+        closed_prs = json.load(file)
+    return render_template('stats.html', commits_data=json.dumps(commits, default=lambda x: x.__dict__),
+                           open_pr_data=json.dumps(open_prs, default=lambda x: x.__dict__), closed_pr_data=json.dumps(closed_prs, default=lambda x: x.__dict__))
 
 
 @bp.route('/code_of_conduct')
