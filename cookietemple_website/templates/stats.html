@@ -103,12 +103,13 @@
             <div class="col-lg-6">
                 <h2 class="mt-0" id="commits"><a href="#commits" class="header-link"><span class="fas fa-link" aria-hidden="true"></span></a>Commits</h2>
                 <p>The chart below, shows the commits made to cookietemple over time. Initially, we started developing cookietemple
-                at the start of 2020.</p>
+                    at the start of 2020.</p>
                 <div class="card bg-light mt-4">
                     <div class="card-body">
                         <canvas id="ct_commits" height="200"></canvas>
-                        <p class="card-text small text-muted mt-3 mb-1"><i class="fas fa-info-circle"></i> Data updated every 24 hours.</p>
-                        <p class="card-text small text-muted mb-1"><i class="fas fa-exclamation-triangle"></i> This only includes commits to the main branch!</p>
+                        <p class="card-text small text-muted mt-3 mb-1"><i class="fas fa-info-circle"></i> Data updated every 24 hours at 2:30AM.</p>
+                        <p class="card-text small text-muted mb-1"><i class="fas fa-exclamation-triangle"></i> This only includes commits to the main branch!
+                        </p>
                         <p class="card-text small text-muted">
                             <a href="#" data-target="" class="dl_plot_svg text-muted"><i class="fas fa-download"></i> SVGDownNotWork</a>
                             <a href="#" data-target="commits" class="reset_chart_zoom text-muted"><i class="fas fa-search-minus"></i> Reset zoom</a>
@@ -116,8 +117,28 @@
                     </div>
                 </div>
             </div>
+            <div class="col-lg-6">
+                <h2 class="mt-0" id="prs"><a href="#prs" class="header-link"><span class="fas fa-link" aria-hidden="true"></span></a>Pull requests</h2>
+                <p>This chart shows the closed Github Pull requests over time and the open PRs on that day. Over the time, many new features were added to cookietemple
+                through these Pull requests.</p>
+                <div class="card bg-light mt-4">
+                    <div class="card-body">
+                        <canvas id="pull_requests" height="200"></canvas>
+                        <p class="card-text small text-muted mt-3 mb-1"><i class="fas fa-info-circle"></i> Data updated every 24 hours at 2:30AM.</p>
+                        <p class="card-text small text-muted mb-1"><i class="fas fa-exclamation-triangle"></i> This only includes PRs to the default development branch!
+                        </p>
+                        <p class="card-text small text-muted">
+                            <a href="#" data-target="" class="dl_plot_svg text-muted"><i class="fas fa-download"></i> SVGDownNotWork</a>
+                            <a href="#" data-target="pull_requests" class="reset_chart_zoom text-muted"><i class="fas fa-search-minus"></i> Reset zoom</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
         <script type="text/javascript">
+            /*
+            Parse commit data
+             */
             const commit_statistics = JSON.parse('{{ commits_data|safe }}');
             dates_of_commits = []
             number_of_commits = []
@@ -125,6 +146,27 @@
                 dates_of_commits.push(commit_date)
                 number_of_commits.push(commit_statistics[commit_date])
             }
+            /*
+            Parse open PR data
+             */
+            const open_pr_statistics = JSON.parse('{{ open_pr_data|safe }}');
+            let open_pr_data = []
+            for (open_pr in open_pr_statistics) {
+                let data = {x:open_pr, y:open_pr_statistics[open_pr]}
+                open_pr_data.push(data)
+            }
+            /*
+            Parse closed PR data
+             */
+            const closed_pr_statistics = JSON.parse('{{ closed_pr_data|safe }}');
+            let closed_pr_data = []
+            for (closed_pr in closed_pr_statistics) {
+                let data = {x:closed_pr, y:closed_pr_statistics[closed_pr]}
+                closed_pr_data.push(data)
+            }
+            console.log(open_pr_data)
+            console.log("=======================")
+            console.log(closed_pr_data)
         </script>
 
         <script>
@@ -132,7 +174,7 @@
             var chartData = {};
             var charts = {};
 
-            // Chart.JS base config TODO as new charts are added
+            // Chart.JS base config
             var chartjs_base = {
                 type: 'line',
                 fill: 'origin',
@@ -143,8 +185,7 @@
                         fontSize: 16
                     },
                     tooltips: {
-                        mode: 'index',
-                        intersect: false,
+                        mode: 'x'
                     },
                     plugins: {
                         zoom: {
@@ -170,8 +211,7 @@
                         yAxes: [{
                             display: true,
                             scaleLabel: {
-                                display: true,
-                                labelString: 'Commits'
+                                display: true
                             }
                         }],
                         xAxes: [{
@@ -206,6 +246,35 @@
             };
             var ctx = document.getElementById('ct_commits').getContext('2d');
             charts['commits'] = new Chart(ctx, chartData['commits']);
+
+            chartData['pull_requests'] = JSON.parse(JSON.stringify(chartjs_base));
+            chartData['pull_requests'].data = {
+                datasets: [
+                    {
+                        label: 'Open PRs',
+                        borderColor: '#00ff00',
+                        pointRadius: 0,
+                        data: open_pr_data,
+                        fill: 'origin'
+                    },
+                    {
+                        label: 'Closed PRs',
+                        borderColor: '#ff0000',
+                        pointRadius: 0,
+                        data: closed_pr_data,
+                    }
+                ]
+            };
+            chartData['pull_requests'].options.title.text = 'GitHub PRs over time';
+            chartData['pull_requests'].options.scales.yAxes = [{stacked: true}];
+            //chartData['pull_requests'].options.elements.line.fill = '-1';
+            chartData['pull_requests'].options.legend = {
+                position: 'bottom',
+                labels: {lineWidth: 1}
+            };
+            var ctx = document.getElementById('pull_requests').getContext('2d');
+            charts['pull_requests'] = new Chart(ctx, chartData['pull_requests']);
+
 
             // reset zoom for plots
             $('.reset_chart_zoom').click(function (e) {

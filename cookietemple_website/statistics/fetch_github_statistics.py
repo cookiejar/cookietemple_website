@@ -106,5 +106,5 @@ def write_to_json(actions_per_day: dict, actions: str) -> None:
 
 
 if __name__ == '__main__':
-    #fetch_ct_commits()
+    fetch_ct_commits()
     fetch_ct_pr_stats()
