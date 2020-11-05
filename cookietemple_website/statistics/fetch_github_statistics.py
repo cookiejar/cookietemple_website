@@ -8,58 +8,62 @@ g = Github(token)
 repo = g.get_repo('cookiejar/cookietemple')
 
 
-def fetch_ct_pr_stats() -> None:
+def fetch_ct_pr_issue_stats(gh_item: str) -> None:
     """
     Fetch number of closed and open pull requests to the cookietemple repository per day
+    :param gh_item Either Issue or PR indicating the sort of data to be collected
     """
-    pull_requests = repo.get_pulls('all')
+    stats = repo.get_pulls('all') if gh_item == 'pr' else repo.get_issues(state='all')
+    open_stats_dict = dict()
+    closed_stats_dict = dict()
 
-    open_pr_dict = dict()
-    closed_pr_dict = dict()
-
-    for pr in pull_requests:
-        pr_is_closed = pr.state == 'closed'
-        pr_created_date = pr.created_at
-        created_date = str(pr_created_date).split(' ')[0]
-        # if pr is already closed, add a closed date
-        if pr_is_closed:
-            pr_closed_date = pr.closed_at
-            closed_date = str(pr_closed_date).split(' ')[0]
+    for stat in stats:
+        if gh_item == 'issue' and stat.pull_request:
+            continue
+        stat_is_closed = stat.state == 'closed'
+        stat_created_date = stat.created_at
+        created_date = str(stat_created_date).split(' ')[0]
+        # if issue/pr is already closed, add a closed date
+        if stat_is_closed:
+            stat_closed_date = stat.closed_at
+            closed_date = str(stat_closed_date).split(' ')[0]
             try:
-                closed_pr_dict[closed_date] += 1
+                closed_stats_dict[closed_date] += 1
             except KeyError:
-                closed_pr_dict[closed_date] = 1
-        # for each pr, add its creation date, so it counts to open PRs
+                closed_stats_dict[closed_date] = 1
+        # for each issue/pr, add its creation date, so it counts to open issues/prs
         try:
-            open_pr_dict[created_date] += 1
+            open_stats_dict[created_date] += 1
         except KeyError:
-            open_pr_dict[created_date] = 1
+            open_stats_dict[created_date] = 1
 
-    open_pr_per_date = dict()
-    for pr in pull_requests:
-        if pr.state == 'closed':
-            pr_created_date = pr.created_at
-            created_date = str(pr_created_date).split(' ')[0]
-            pr_closed_date = pr.closed_at
-            closed_date = str(pr_closed_date).split(' ')[0]
-            for date in open_pr_dict.keys():
+    open_stat_per_date = dict()
+    for stat in stats:
+        if gh_item == 'issue' and stat.pull_request:
+            continue
+        if stat.state == 'closed':
+            stat_created_date = stat.created_at
+            created_date = str(stat_created_date).split(' ')[0]
+            stat_closed_date = stat.closed_at
+            closed_date = str(stat_closed_date).split(' ')[0]
+            for date in open_stats_dict.keys():
                 if created_date <= date < closed_date:
                     try:
-                        open_pr_per_date[date] += 1
+                        open_stat_per_date[date] += 1
                     except KeyError:
-                        open_pr_per_date[date] = 1
+                        open_stat_per_date[date] = 1
 
-    # sort the open and closed prs by date in ascending order
-    open_pr_list = sorted(list(open_pr_per_date.items()))
-    closed_pr_list = sorted(list(closed_pr_dict.items()))
+    # sort the open and closed issues/prs by date in ascending order
+    open_stat_list = sorted(list(open_stat_per_date.items()))
+    closed_stat_list = sorted(list(closed_stats_dict.items()))
     # convert to dict for easier JSON dumping
-    open_pr_dict = dict(open_pr_list)
-    closed_pr_dict = dict(closed_pr_list)
-    # sum up all closed prs made up to (including) a date
-    sum_until_date(closed_pr_dict)
+    open_stats_dict = dict(open_stat_list)
+    closed_stats_dict = dict(closed_stat_list)
+    # sum up all closed issues/prs made up to (including) a date
+    sum_until_date(closed_stats_dict)
     # dump data to json file to plot at stats subpage
-    write_to_json(open_pr_dict, 'open_prs')
-    write_to_json(closed_pr_dict, 'closed_prs')
+    write_to_json(open_stats_dict, f'open_{gh_item}s')
+    write_to_json(closed_stats_dict, f'closed_{gh_item}s')
 
 
 def fetch_ct_commits() -> None:
@@ -107,4 +111,5 @@ def write_to_json(actions_per_day: dict, actions: str) -> None:
 
 if __name__ == '__main__':
     fetch_ct_commits()
-    fetch_ct_pr_stats()
+    fetch_ct_pr_issue_stats(gh_item='issue')
+    fetch_ct_pr_issue_stats(gh_item='pr')

@@ -99,6 +99,40 @@
             </div>
         </div>
 
+        <h1 id="code"><a href="#code" class="header-link"><span class="fas fa-link" aria-hidden="true"></span></a>Code stats</h1>
+        <p>Whilst we always prefer quality over quantity, these numbers reflect the work output from the cookietemple community.</p>
+
+        <div class="card-group text-center stats_keynumbers">
+            <div class="card bg-light">
+                <div class="card-body">
+                    <p class="card-text display-4">6</p>
+                    <p class="card-text text-muted">Templates</p>
+                </div>
+                <div class="bg-icon"><i class="far fa-folder"></i></div>
+            </div>
+            <div class="card bg-light">
+                <div class="card-body">
+                    <p class="card-text display-4" id="latest_prs"><a href="#pull_requests" class="text-body text-decoration-none stretched-link"></a></p>
+                    <p class="card-text text-muted">Pull Requests</p>
+                </div>
+                <div class="bg-icon"><i class="fas fa-code-branch fa-flip-vertical"></i></div>
+            </div>
+            <div class="card bg-light">
+                <div class="card-body">
+                    <p class="card-text display-4" id="latest_commits"></p>
+                    <p class="card-text text-muted">Commits</p>
+                </div>
+                <div class="bg-icon"><i class="far fa-file-code"></i></div>
+            </div>
+            <div class="card bg-light">
+                <div class="card-body">
+                    <p class="card-text display-4" id="latest_issues"><a href="#issues" class="text-body text-decoration-none stretched-link"></a></p>
+                    <p class="card-text text-muted">Issues</p>
+                </div>
+                <div class="bg-icon"><i class="fas fa-exclamation-circle"></i></div>
+            </div>
+        </div>
+
         <div class="row">
             <div class="col-lg-6">
                 <h2 class="mt-0" id="commits"><a href="#commits" class="header-link"><span class="fas fa-link" aria-hidden="true"></span></a>Commits</h2>
@@ -119,13 +153,15 @@
             </div>
             <div class="col-lg-6">
                 <h2 class="mt-0" id="prs"><a href="#prs" class="header-link"><span class="fas fa-link" aria-hidden="true"></span></a>Pull requests</h2>
-                <p>This chart shows the closed Github Pull requests over time and the open PRs on that day. Over the time, many new features were added to cookietemple
-                through these Pull requests.</p>
+                <p>This chart shows the closed Github Pull requests over time and the open PRs on that day. Over the time, many new features were added to
+                    cookietemple
+                    through these Pull requests.</p>
                 <div class="card bg-light mt-4">
                     <div class="card-body">
                         <canvas id="pull_requests" height="200"></canvas>
                         <p class="card-text small text-muted mt-3 mb-1"><i class="fas fa-info-circle"></i> Data updated every 24 hours at 2:30AM.</p>
-                        <p class="card-text small text-muted mb-1"><i class="fas fa-exclamation-triangle"></i> This only includes PRs to the default development branch!
+                        <p class="card-text small text-muted mb-1"><i class="fas fa-exclamation-triangle"></i> This only includes PRs to the default development
+                            branch!
                         </p>
                         <p class="card-text small text-muted">
                             <a href="#" data-target="" class="dl_plot_svg text-muted"><i class="fas fa-download"></i> SVGDownNotWork</a>
@@ -135,6 +171,25 @@
                 </div>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <h2 class="mt-0" id="commits"><a href="#issues" class="header-link"><span class="fas fa-link" aria-hidden="true"></span></a>Issues</h2>
+                <p>Issues are an important tool during the development of any software piece. Below chart shows the closed issues over time and the
+                    open issues per day at the cookietemple repository.</p>
+                <div class="card bg-light mt-4">
+                    <div class="card-body">
+                        <canvas id="issues" height="200"></canvas>
+                        <p class="card-text small text-muted mt-3 mb-1"><i class="fas fa-info-circle"></i> Data updated every 24 hours at 2:30AM.</p>
+                        <p class="card-text small text-muted">
+                            <a href="#" data-target="" class="dl_plot_svg text-muted"><i class="fas fa-download"></i> SVGDownNotWork</a>
+                            <a href="#" data-target="issues" class="reset_chart_zoom text-muted"><i class="fas fa-search-minus"></i> Reset zoom</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <script type="text/javascript">
             /*
             Parse commit data
@@ -146,13 +201,15 @@
                 dates_of_commits.push(commit_date)
                 number_of_commits.push(commit_statistics[commit_date])
             }
+            latest_commits = number_of_commits[number_of_commits.length - 1];
+            document.getElementById("latest_commits").innerHTML = latest_commits;
             /*
             Parse open PR data
              */
             const open_pr_statistics = JSON.parse('{{ open_pr_data|safe }}');
             let open_pr_data = []
             for (open_pr in open_pr_statistics) {
-                let data = {x:open_pr, y:open_pr_statistics[open_pr]}
+                let data = {x: open_pr, y: open_pr_statistics[open_pr]}
                 open_pr_data.push(data)
             }
             /*
@@ -161,12 +218,31 @@
             const closed_pr_statistics = JSON.parse('{{ closed_pr_data|safe }}');
             let closed_pr_data = []
             for (closed_pr in closed_pr_statistics) {
-                let data = {x:closed_pr, y:closed_pr_statistics[closed_pr]}
+                let data = {x: closed_pr, y: closed_pr_statistics[closed_pr]}
                 closed_pr_data.push(data)
             }
-            console.log(open_pr_data)
-            console.log("=======================")
-            console.log(closed_pr_data)
+            latest_prs = closed_pr_data[closed_pr_data.length - 1].y
+            document.getElementById("latest_prs").innerHTML = latest_prs;
+            /*
+            Parse closed issue data
+             */
+            const closed_issue_statistics = JSON.parse('{{ closed_issue_data|safe }}');
+            let closed_issue_data = []
+            for (closed_issue in closed_issue_statistics) {
+                let data = {x: closed_issue, y: closed_issue_statistics[closed_issue]}
+                closed_issue_data.push(data)
+            }
+            latest_issues = closed_issue_data[closed_issue_data.length - 1].y
+            document.getElementById("latest_issues").innerHTML = latest_issues;
+            /*
+            Parse open issue data
+             */
+            const open_issue_statistics = JSON.parse('{{ open_issue_data|safe }}');
+            let open_issue_data = []
+            for (open_issue in open_issue_statistics) {
+                let data = {x: open_issue, y: open_issue_statistics[open_issue]}
+                open_issue_data.push(data)
+            }
         </script>
 
         <script>
@@ -274,6 +350,33 @@
             };
             var ctx = document.getElementById('pull_requests').getContext('2d');
             charts['pull_requests'] = new Chart(ctx, chartData['pull_requests']);
+
+            chartData['issues'] = JSON.parse(JSON.stringify(chartjs_base));
+            chartData['issues'].data = {
+                datasets: [
+                    {
+                        label: 'Open Issues',
+                        borderColor: '#00ff00',
+                        pointRadius: 0,
+                        data: open_issue_data
+                    },
+                    {
+                        label: 'Closed Issues',
+                        borderColor: '#ff0000',
+                        pointRadius: 0,
+                        data: closed_issue_data,
+                        fill: 'origin'
+                    }
+                ]
+            };
+            chartData['issues'].options.title.text = 'GitHub Issues over time';
+            //chartData['issues'].options.scales.yAxes = [{stacked: true}];
+            chartData['issues'].options.legend = {
+                position: 'bottom',
+                labels: {lineWidth: 1}
+            };
+            var ctx = document.getElementById('issues').getContext('2d');
+            charts['issues'] = new Chart(ctx, chartData['issues']);
 
 
             // reset zoom for plots
