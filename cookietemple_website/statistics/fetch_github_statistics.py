@@ -107,9 +107,3 @@ def write_to_json(actions_per_day: dict, actions: str) -> None:
     """
     with open(f'{actions}_per_day.json', 'w', encoding='utf-8') as f:
         json.dump(actions_per_day, f, ensure_ascii=False, indent=4)
-
-
-if __name__ == '__main__':
-    fetch_ct_commits()
-    fetch_ct_pr_issue_stats(gh_item='issue')
-    fetch_ct_pr_issue_stats(gh_item='pr')
