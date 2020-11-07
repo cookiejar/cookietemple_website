@@ -36,9 +36,11 @@ def stats():
         open_issues = json.load(file)
     with open('closed_issues_per_day.json', 'r') as file:
         closed_issues = json.load(file)
+    with open('discord_user.json', 'r') as file:
+        discord_user = json.load(file)
     return render_template('stats.html', commits_data=json.dumps(commits, default=lambda x: x.__dict__),
                            open_pr_data=json.dumps(open_prs, default=lambda x: x.__dict__), closed_pr_data=json.dumps(closed_prs, default=lambda x: x.__dict__),
-                           open_issue_data=json.dumps(open_issues), closed_issue_data=json.dumps(closed_issues))
+                           open_issue_data=json.dumps(open_issues), closed_issue_data=json.dumps(closed_issues), discord_user_data=json.dumps(discord_user))
 
 
 @bp.route('/code_of_conduct')
