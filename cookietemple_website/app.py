@@ -11,6 +11,6 @@ from cookietemple_website.errors import bp as errors_bp  # noqa: E402
 
 app.register_blueprint(errors_bp)
 
-from cookietemple_website.basic import bp as basic_bp  # noqa: E402
+from cookietemple_website.routes import bp as basic_bp  # noqa: E402
 
 app.register_blueprint(basic_bp)

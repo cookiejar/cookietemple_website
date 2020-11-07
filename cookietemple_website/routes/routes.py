@@ -1,7 +1,7 @@
 from flask import render_template, redirect, url_for
 import json
 
-from cookietemple_website.basic import bp
+from cookietemple_website.routes import bp
 
 
 @bp.route('/')

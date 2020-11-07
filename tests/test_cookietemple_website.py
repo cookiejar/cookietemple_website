@@ -30,7 +30,7 @@ def create_test_app():
 
     app.register_blueprint(errors_bp)
 
-    from cookietemple_website.basic import bp as basic_bp
+    from cookietemple_website.routes import bp as basic_bp
 
     app.register_blueprint(basic_bp)
 
@@ -39,9 +39,6 @@ def create_test_app():
 
 def test_redirect():
     flask_app = create_test_app()
-
-    # Flask provides a way to test your application by exposing the Werkzeug test Client
-    # and handling the context locals for you.
     testing_client = flask_app.test_client()
     response = testing_client.get('/')
     assert response.status_code == 302  # assert redirecting
