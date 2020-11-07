@@ -20,7 +20,7 @@ def fetch_cookiejar_server_member():
         for key in keys:
             ordered_data[key] = data[key]
 
-        with open('../discord_user.json', 'w') as f:
+        with open('../../discord_user.json', 'w') as f:
             json.dump(ordered_data, f)
         await discord.Client.close(client)
 
