@@ -20,7 +20,7 @@ jobs:
         - uses: actions/checkout@v2
           with:
               fetch-depth: 0
-              token: '{% raw %}${{ secrets.CT_SYNC_TOKEN }}{% endraw %}'
+              token: '${{ secrets.CT_SYNC_TOKEN }}'
           name: Check out source-code repository
 
         - uses: oleksiyrudenko/gha-git-credentials@v2
@@ -28,7 +28,7 @@ jobs:
                name: 'cookiejar'
                email: 'philipp_ehm@protonmail.com'
                actor: 'Imipenem'
-               token: '{% raw %}${{ secrets.CT_SYNC_TOKEN}}{% endraw %}'
+               token: '${{ secrets.CT_SYNC_TOKEN}}'
 
         - name: Sync project
-          run: cookietemple sync . {% raw %}${{ secrets.CT_SYNC_TOKEN  }}{% endraw %} Imipenem
+          run: cookietemple sync . ${{ secrets.CT_SYNC_TOKEN  }} Imipenem
