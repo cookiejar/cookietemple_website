@@ -6,6 +6,7 @@ project_slug_no_hyphen: cookietemple_website
 template_version: '1.0.0 # <<COOKIETEMPLE_NO_BUMP>>'
 template_handle: web-website-python
 github_username: cookiejar
+creator_github_username: Imipenem
 is_github_repo: true
 is_repo_private: false
 is_github_orga: true
