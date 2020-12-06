@@ -1,6 +1,4 @@
 server {
-    server_name cookietemple.com www.cookietemple.com;
-
     location / {
         include proxy_params;
         proxy_pass http://unix:/home/cookietemple_dev/cookietemple_website/cookietemple_website.sock;
@@ -17,6 +15,6 @@ server {
     } # managed by Certbot
 
     listen 80;
-    server_name www.cookietemple.com cookietemple.com;
+    server_name cookietemple.com www.cookietemple.com;
     return 301 https://$host$request_uri;
 }

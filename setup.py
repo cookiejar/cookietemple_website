@@ -40,22 +40,20 @@ test_requirements = ['pytest>=3', ]
 setup(
     author="Imipenem",
     author_email='philipp_ehm@protonmail.com',
-    python_requires='>=3.5',
+    python_requires='>=3.7',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Natural Language :: English',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.5',
-        'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
     ],
-    description="cookietemple_website. A best practice .",
+    description="cookietemple_website. A cookietemple based .",
     entry_points={
         'console_scripts': [
-            'cookietemple_website={}.server:main'.format(module.__name__),
+            f'cookietemple_website={module.__name__}.server:main',
         ],
     },
     install_requires=requirements,
