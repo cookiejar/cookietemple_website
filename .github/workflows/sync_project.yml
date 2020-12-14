@@ -25,7 +25,7 @@ jobs:
 
         - uses: oleksiyrudenko/gha-git-credentials@v2
           with:
-               name: 'cookiejar'
+               name: 'Imipenem'
                email: 'philipp_ehm@protonmail.com'
                actor: 'Imipenem'
                token: '${{ secrets.CT_SYNC_TOKEN}}'

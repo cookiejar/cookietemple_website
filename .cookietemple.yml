@@ -1,9 +1,9 @@
-cookietemple_version: '0.1.0 # <<COOKIETEMPLE_NO_BUMP>>'
+cookietemple_version: '1.2.3 # <<COOKIETEMPLE_NO_BUMP>>'
 domain: web
 language: python
 project_slug: cookietemple_website
 project_slug_no_hyphen: cookietemple_website
-template_version: '1.0.0 # <<COOKIETEMPLE_NO_BUMP>>'
+template_version: '1.1.0 # <<COOKIETEMPLE_NO_BUMP>>'
 template_handle: web-website-python
 github_username: cookiejar
 creator_github_username: Imipenem

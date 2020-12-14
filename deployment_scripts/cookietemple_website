@@ -15,6 +15,6 @@ server {
     } # managed by Certbot
 
     listen 80;
-    server_name www.cookietemple.com cookietemple.com;
+    server_name cookietemple.com www.cookietemple.com;
     return 301 https://$host$request_uri;
 }
