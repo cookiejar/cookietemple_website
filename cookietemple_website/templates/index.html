@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cookietemple</title>
+    {% include 'head.html' %}
+</head>
+
+
+<body>
+<nav class="navbar fixed-top navbar-expand-md navbar-light site-nav">
+{% include 'header.html' %}
+</nav><div class="homepage-header">
+    <div class="homepage-header-contents col-md-5">
+        <p class="lead" style="font-family: 'Maven Pro', sans-serif">An open source project to create state-of-the art templates for all domains.</p>
+        <div class="hompage-cta-flex">
+            <a class="hompage-cta" href="/templates" style="color: #FFFFFF">View Templates</a>
+        </div>
+    </div>
+</div>
+
+
+<div class="triangle triangle-up"></div>
+<div class="homepage-intro">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 py-3 py-md-5 px-md-4">
+                <h3 class="display-5 text-white">For users</h3>
+                <p class="lead">Highly customizable, ready-to-use templates for project setup in seconds.</p>
+            </div>
+            <div class="col-md-4 py-3 py-md-5 px-md-4">
+                <h3 class="display-5 text-white">For developers</h3>
+                <p class="lead">A community to build standardized, well-architectured templates to accelerate your workflow.</p>
+            </div>
+            <div class="col-md-4 py-3 py-md-5 px-md-4">
+                <h3 class="display-5 text-white">For companies</h3>
+                <p class="lead">Standardize your development workflow using our streamlined templates.</p>
+            </div>
+        </div>
+        <p class="text-center text-white m-0 pb-3">
+
+        </p>
+    </div>
+</div>
+<div class="triangle triangle-down"></div>
+
+<div class="container py-5 text-center lead" id="features" style="font-family: 'Maven Pro', sans-serif">
+    <p>Cookietemple is an open-source effort to standardize and accelerate project setup to especially simplify the development in a team.</p>
+</div>
+
+<div id="features" class="container homepage-feature-boxes">
+    <div class="row">
+        <div class="col-md-4 mb-5">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Domains</h5>
+                    <img class="float-right ml-3" height="100px" src="../static/assets/img/icons/books_icon.svg"/>
+                    <p class="card-text">cookietemple provides standardized templates for many domains using different languages, frameworks and
+                        usecases.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-5">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Customizable</h5>
+                    <img class="float-right ml-3" height="107px" src="../static/assets/img/icons/tools_custom.svg"/>
+                    <p class="card-text">Choose from several options such as testing or web frameworks to make your template fit exactly what you
+                        need.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-5">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Documentation</h5>
+                    <img class="float-right ml-3" height="107px" src="../static/assets/img/icons/clipboardDoc_icon.svg"/>
+                    <p class="card-text">Extensive documentation covering installation, usage and every template in detail
+                        ensures that you will not be left alone in the dark.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-5">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">CI Testing</h5>
+                    <img class="float-right ml-3" height="100px" src="../static/assets/img/icons/CI_icon.svg"/>
+                    <p class="card-text">Each template comes with ready-to-use GitHub Workflows per default.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-5">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Stable Releases</h5>
+                    <img class="float-right ml-3" height="108px" src="../static/assets/img/icons/check_icon.svg"/>
+                    <p class="card-text">Each released template is designed, tested and approved by the community.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-5">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Community</h5>
+                    <img class="float-right ml-3" height="108px" src="../static/assets/img/icons/community.svg"/>
+                    <p class="card-text">cookietemple thrives on active development by the open-source community to build new templates.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- SHOULD WE REPLACE ONE WITH LINTING?-->
+
+<div class="bg-dark py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h2 id="get-started">Get started in minutes</h2>
+                <p class="text-white">cookietemple currently offers support for Linux and MacOS.</p>
+                <p class="text-white">It comes with a bunch of useful commands to make your life during development easier.</p>
+                <p class="text-white">Make sure to check out the <a href="" style="color: #005fff">documentation</a> for details.</p>
+            </div>
+            <div class="col-sm-6">
+                <div class="card text-white bg-dark border-light">
+                    <div class="card-body">
+                <pre class="text-white mb-0">
+<span class="text-white-50"># Install cookietemple</span>
+pip install cookietemple
+
+<span class="text-white-50"># Get an overview of all commands</span>
+cookietemple --help
+
+<span class="text-white-50"># Check out all available templates</span>
+cookietemple list
+
+<span class="text-white-50"># Get started and create your first project</span>
+cookietemple create
+</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container my-5 text-center">
+    <p class="lead"></p>
+    <div class="row">
+        <div class="col-md-4 px-md-5 mb-5 mb-md-0">
+            <h3>See what's available</h3>
+            <p>Check out the available templates to see if we have what you need. Each comes with release details, keywords and a description.</p>
+            <a class="btn btn-lg btn-success arrow-hover" href="/templates"><span style="color: #FFFFFF">Available templates</span></a>
+        </div>
+        <div class="col-md-4 px-md-5 mb-5 mb-md-0">
+            <h3>Need help?</h3>
+            <p>Check out our public channels and join them to get help and see whats going on over there.<br><a style="visibility: hidden;">same_height</a></p>
+            <a class="btn btn-lg btn-success arrow-hover" href="/join"><span style="color: #FFFFFF">Join cookietemple</span></a>
+        </div>
+        <div class="col-md-4 px-md-5 mb-5 mb-md-0">
+            <h3>Get into the code</h3>
+            <p>If you're interested in contributing to cookietemple, take a look at the developer documentation to see what's required.</p>
+            <a class="btn btn-lg btn-success arrow-hover" href="https://cookietemple.readthedocs.io"><span style="color: #FFFFFF">Contribute</span></a>
+        </div>
+    </div>
+</div>
+<footer class="footer">
+    {% include 'footer.html' %}
+</footer>
+</body>
+</html>

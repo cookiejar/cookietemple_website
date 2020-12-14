@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Cookietemple Templates</title>
+    {% include 'head.html' %}
+</head>
+<body>
+<nav class="navbar fixed-top navbar-expand-md navbar-light site-nav">
+{% include 'header.html' %}
+</nav>
+<div class="mainpage">
+    <div class="mainpage-heading">
+        <div class="container">
+            <h1 class="display-3">Templates</h1>
+            <p class="lead">Browse the <strong>6</strong> templates that are currently available as part of cookietemple.</p></div>
+    </div>
+
+    <div class="triangle triangle-down"></div>
+
+    <div class="container main-content">
+
+        <h1>Available Templates</h1>
+        <p class="mb-3">Can you think of another template that would fit in well?
+            <a href="https://github.com/cookiejar/cookietemple/issues/new?assignees=&labels=&template=new_template.md&title=%5BTEMPLATE%2FCOMMAND%2FCORE%5D+new+template+summary">Let
+                us know!</a></p>
+
+        <div class="btn-toolbar mb-4 pipelines-toolbar" role="toolbar">
+            <div class="pipeline-filters input-group input-group-sm mr-2 mt-2">
+                <input type="search" class="form-control" placeholder="Search templates" value="">
+            </div>
+            <div class="btn-group btn-group-sm mt-2 d-none d-lg-block" role="group">
+                <button type="button" class="btn btn-link text-body">Filter:</button>
+            </div>
+            <div class="pipeline-filters btn-group btn-group-sm mr-2 mt-2">
+                <button type="button" class="btn btn-sm btn-outline-success active" data-target=".pipeline-cli">
+                    CLI
+                    <span class="badge badge-light d-none d-lg-inline">2</span>
+                </button>
+                <button type="button" class="btn btn-sm btn-outline-success active" data-target=".pipeline-gui">
+                    GUI
+                    <span class="badge badge-light d-none d-lg-inline">1</span>
+                </button>
+                <button type="button" class="btn btn-sm btn-outline-success active" data-target=".pipeline-web">
+                    Web
+                    <span class="badge badge-light d-none d-lg-inline">1</span>
+                </button>
+                <button type="button" class="btn btn-sm btn-outline-success active" data-target=".pipeline-lib">
+                    Lib
+                    <span class="badge badge-light d-none d-lg-inline">1</span>
+                </button>
+                <button type="button" class="btn btn-sm btn-outline-success active" data-target=".pipeline-pub">
+                    Pub
+                    <span class="badge badge-light d-none d-lg-inline">1</span>
+                </button>
+            </div>
+        </div>
+
+        <p class="no-pipelines text-muted mt-5" style="display: none;">No templates found..</p>
+
+        <div class="card-deck pipelines-container">
+            <div class="card card_deck_card pipeline pipeline-cli">
+                <div class="card-body clearfix">
+                    <h3 class="card-title mb-0">
+                        <a href="" class="pipeline-name">
+                            <span class="d-none d-lg-inline">cookietemple </span>cli-python </a>
+                        <small class="status-icon text-success ml-2 fas fa-check" title="This template is shipped with cookietemple, tested and good to go."
+                               data-toggle="tooltip"></small>
+                    </h3>
+                    <p class="topics mb-0">
+                        <a class="badge pipeline-topic" style="color: #1e6bb8">cli</a>
+                        <a class="badge pipeline-topic" style="color: #1e6bb8">python</a>
+                        <a class="badge pipeline-topic" style="color: #1e6bb8">pytest</a>
+                    </p>
+                    <p class="card-text mb-0 mt-2">Best practice Python package with optional command line support (click, argparse).
+                        Pytest or unittest are available as testing libraries.
+                        The package can be trivially locally installed and distributed on PyPi.</p>
+                    <p class="mb-0 mt-2 dl-btn-row">
+                        <a href="https://github.com/cookiejar/cookietemple/tree/development/cookietemple/create/templates/cli/cli_python" target="_blank"
+                           class="btn btn-sm btn-outline-success">
+                            Version <strong>1.0.0</strong>
+                        </a> &nbsp;
+                        <small class="text-black-50 publish-date" data-pubdate="1587720362">Shipped in initial cookietemple release</small>
+                    </p>
+                </div>
+            </div>
+
+            <div class="card card_deck_card pipeline pipeline-cli">
+                <div class="card-body clearfix">
+                    <h3 class="card-title mb-0">
+                        <a href="" class="pipeline-name">
+                            <span class="d-none d-lg-inline">cookietemple </span>cli-java </a>
+                        <small class="status-icon text-success ml-2 fas fa-check" title="This template is shipped with cookietemple, tested and good to go."
+                               data-toggle="tooltip"></small>
+                    </h3>
+                    <p class="topics mb-0">
+                        <a style="color: #1e6bb8" class="badge pipeline-topic">cli</a>
+                        <a style="color: #1e6bb8" class="badge pipeline-topic">jvm</a>
+                        <a style="color: #1e6bb8" class="badge pipeline-topic">java</a>
+                        <a style="color: #1e6bb8" class="badge pipeline-topic">picocli</a>
+                    </p>
+                    <p class="card-text mb-0 mt-2">A commandline application tool written in Java using the Picocli framework.
+                        The commandline application is built using GraalVM, which results in platform dependent binaries.
+                        Multiplatform Github workflows ensure that binaries are built for every platform and easily accessible as Github artifacts..</p>
+                    <p class="mb-0 mt-2 dl-btn-row">
+                        <a href="https://github.com/cookiejar/cookietemple/tree/development/cookietemple/create/templates/cli/cli_java" target="_blank" class="btn btn-sm btn-outline-success">
+                            Version <strong>1.0.0</strong>
+                        </a> &nbsp;
+                        <small class="text-black-50 publish-date" data-pubdate="1587720362">Shipped in initial cookietemple release</small>
+                    </p>
+                </div>
+            </div>
+
+             <div class="card card_deck_card pipeline pipeline-lib">
+                <div class="card-body clearfix">
+                    <h3 class="card-title mb-0">
+                        <a href="" class="pipeline-name">
+                            <span class="d-none d-lg-inline">cookietemple </span>lib cpp</a>
+                        <small class="status-icon text-success ml-2 fas fa-check" title="This template is shipped with cookietemple, tested and good to go."
+                               data-toggle="tooltip"></small>
+                    </h3>
+                    <p class="topics mb-0">
+                        <a style="color: #1e6bb8" class="badge pipeline-topic">lib</a>
+                        <a style="color: #1e6bb8" class="badge pipeline-topic">c++</a>
+                        <a style="color: #1e6bb8" class="badge pipeline-topic">cmake</a>
+                    </p>
+                    <p class="card-text mb-0 mt-2">A template for modern C++ projects - both executables and libraries - using CMake, Clang-Format, CI, unit
+                        testing and more, with support for downstream inclusion.</p>
+                    <p class="mb-0 mt-2 dl-btn-row">
+                        <a href="https://github.com/cookiejar/cookietemple/tree/development/cookietemple/create/templates/lib/lib_cpp" target="_blank" class="btn btn-sm btn-outline-success">
+                            Version <strong>1.0.0</strong>
+                        </a> &nbsp;
+                        <small class="text-black-50 publish-date" data-pubdate="1587720362">Shipped in initial cookietemple release</small>
+                    </p>
+                </div>
+            </div>
+
+            <div class="card card_deck_card pipeline pipeline-web">
+                <div class="card-body clearfix">
+                    <h3 class="card-title mb-0">
+                        <a href="" class="pipeline-name">
+                            <span class="d-none d-lg-inline">cookietemple </span>web-website-python </a>
+                        <small class="status-icon text-success ml-2 fas fa-check" title="This template is shipped with cookietemple, tested and good to go."
+                               data-toggle="tooltip"></small>
+                    </h3>
+                    <p class="topics mb-0">
+                        <a style="color: #1e6bb8" class="badge pipeline-topic">web</a>
+                        <a style="color: #1e6bb8" class="badge pipeline-topic">website</a>
+                        <a style="color: #1e6bb8" class="badge pipeline-topic">python</a>
+                        <a style="color: #1e6bb8" class="badge pipeline-topic">flask</a>
+                    </p>
+                    <p class="card-text mb-0 mt-2">A Flask based python web template that can be used with database support,
+                        translations with flask babel and working user registration or as a basic website setup. Both ways, its configured to be deployed
+                        in seconds.</p>
+                    <p class="mb-0 mt-2 dl-btn-row">
+                        <a href="https://github.com/cookiejar/cookietemple/tree/development/cookietemple/create/templates/web/web_website" target="_blank" class="btn btn-sm btn-outline-success">
+                            Version <strong>1.0.0</strong>
+                        </a> &nbsp;
+                        <small class="text-black-50 publish-date" data-pubdate="1587720362">Shipped in initial cookietemple release</small>
+                    </p>
+                </div>
+            </div>
+
+            <div class="card card_deck_card pipeline pipeline-gui">
+                <div class="card-body clearfix">
+                    <h3 class="card-title mb-0">
+                        <a href="" class="pipeline-name">
+                            <span class="d-none d-lg-inline">cookietemple </span>GUI-Java </a>
+                        <small class="status-icon text-success ml-2 fas fa-check" title="This template is shipped with cookietemple, tested and good to go."
+                               data-toggle="tooltip"></small>
+                    </h3>
+                    <p class="topics mb-0">
+                        <a style="color: #1e6bb8" class="badge pipeline-topic">gui</a>
+                        <a style="color: #1e6bb8" class="badge pipeline-topic">jvm</a>
+                        <a style="color: #1e6bb8" class="badge pipeline-topic">java</a>
+                        <a style="color: #1e6bb8" class="badge pipeline-topic">javaFX</a>
+                    </p>
+                    <p class="card-text mb-0 mt-2">GUI Java Template</p>
+                    <p class="mb-0 mt-2 dl-btn-row">
+                        <a href="https://github.com/cookiejar/cookietemple/tree/development/cookietemple/create/templates/gui/gui_java" target="_blank" class="btn btn-sm btn-outline-success">
+                            Version <strong>1.0.0</strong>
+                        </a> &nbsp;
+                        <small class="text-black-50 publish-date" data-pubdate="1587720362">Shipped in initial cookietemple release</small>
+                    </p>
+                </div>
+            </div>
+
+            <div class="card card_deck_card pipeline pipeline-pub">
+                <div class="card-body clearfix">
+                    <h3 class="card-title mb-0">
+                        <a href="" class="pipeline-name">
+                            <span class="d-none d-lg-inline">cookietemple </span>pub-thesis </a>
+                        <small class="status-icon text-success ml-2 fas fa-check" title="This template is shipped with cookietemple, tested and good to go."
+                               data-toggle="tooltip"></small>
+                    </h3>
+                    <p class="topics mb-0">
+                        <a style="color: #1e6bb8" class="badge pipeline-topic">pub</a>
+                        <a style="color: #1e6bb8" class="badge pipeline-topic">latex</a>
+                        <a style="color: #1e6bb8" class="badge pipeline-topic">thesis</a>
+                    </p>
+                    <p class="card-text mb-0 mt-2">A modern LaTeX/XeLaTeX/LuaLaTeX thesis template based on the Cambridge University
+                        Engineering Department template. The template is still highly customizable but offers very reasonable defaults and should not
+                        require a lot if any configuration.</p>
+                    <p class="mb-0 mt-2 dl-btn-row">
+                        <a href="https://github.com/cookiejar/cookietemple/tree/development/cookietemple/create/templates/pub/pub_thesis" target="_blank" class="btn btn-sm btn-outline-success">
+                            Version <strong>1.0.0</strong>
+                        </a> &nbsp;
+                        <small class="text-black-50 publish-date" data-pubdate="1587720362">Shipped in initial cookietemple release</small>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<footer class="footer">
+    {% include 'footer.html' %}
+</footer>
+</body>
+</html>

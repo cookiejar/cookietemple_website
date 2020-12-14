@@ -25,17 +25,14 @@ cookietemple_website
 
 
 
-cookietemple_website. A cookietemple based .
+This repository contains the code for the `cookietemple website <https://cookietemple.com>`_.
 
 
 * Free software: MIT
 * Documentation: https://cookietemple-website.readthedocs.io.
 
-
-Features
---------
-
-* TODO
+This project contains the code for the cookietemple project website. Take a look at the site at
+https://cookietemple.com.
 
 Credits
 -------

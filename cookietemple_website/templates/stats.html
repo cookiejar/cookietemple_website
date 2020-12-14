@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Cookietemple statistics</title>
+    {% include 'head.html' %}
+</head>
+<body>
+<nav class="navbar fixed-top navbar-expand-md navbar-light site-nav">
+    {% include 'header.html' %}
+</nav>
+<div class="mainpage">
+    <div class="mainpage-heading">
+        <div class="container">
+            <h1 class="display-3">Statistics</h1>
+            <p class="lead">Get detailed insights into cookietemple</p></div>
+    </div>
+
+    <div class="triangle triangle-down"></div>
+
+    <div class="container main-content">
+        <h1 id="community"><a href="#" class="header-link"><span class="fas fa-link" aria-hidden="true"></span></a>Community</h1>
+        <p>The numbers below track the growth of cookietemple over time.</p>
+        <p class="text-info small">
+            <i class="far fa-hand-point-right"></i>
+            Click a number to see how the community has grown over time
+        </p>
+
+        <div class="card-group text-center stats_keynumbers">
+            <div class="card bg-light">
+                <div class="card-body">
+                    <p class="card-text display-4"><a href="#" class="text-body text-decoration-none stretched-link">3</a></p>
+                    <p class="card-text text-muted">Discord users</p>
+                </div>
+                <div class="bg-icon"><i class="fab fa-discord"></i></div>
+            </div>
+            <div class="card bg-light">
+                <div class="card-body">
+                    <p class="card-text display-4"><a href="#" class="text-body text-decoration-none stretched-link">2</a></p>
+                    <p class="card-text text-muted">GitHub organisation members</p>
+                </div>
+                <div class="bg-icon"><i class="fab fa-github"></i></div>
+            </div>
+            <div class="card bg-light">
+                <div class="card-body" data-toggle="tooltip">
+                    <p class="card-text display-4"><a href="#" class="text-body text-decoration-none stretched-link">7</a></p>
+                    <p class="card-text text-muted">GitHub contributors</p>
+                </div>
+                <div class="bg-icon"><i class="fas fa-code-branch"></i></div>
+            </div>
+            <div class="card bg-light">
+                <div class="card-body">
+                    <p class="card-text display-4"><a href="#" class="text-body text-decoration-none stretched-link">2</a></p>
+                    <p class="card-text text-muted">Twitter followers</p>
+                </div>
+                <div class="bg-icon"><i class="fab fa-twitter"></i></div>
+            </div>
+        </div>
+
+        <h1 id="code"><a href="#code" class="header-link"><span class="fas fa-link" aria-hidden="true"></span></a>Code stats</h1>
+        <p>Whilst we always prefer quality over quantity, these numbers reflect the work output from the cookietemple community.</p>
+
+        <div class="card-group text-center stats_keynumbers">
+            <div class="card bg-light">
+                <div class="card-body">
+                    <p class="card-text display-4">6</p>
+                    <p class="card-text text-muted">Templates</p>
+                </div>
+                <div class="bg-icon"><i class="far fa-folder"></i></div>
+            </div>
+            <div class="card bg-light">
+                <div class="card-body">
+                    <p class="card-text display-4" id="latest_prs"><a href="#pull_requests" class="text-body text-decoration-none stretched-link"></a></p>
+                    <p class="card-text text-muted">Pull Requests</p>
+                </div>
+                <div class="bg-icon"><i class="fas fa-code-branch fa-flip-vertical"></i></div>
+            </div>
+            <div class="card bg-light">
+                <div class="card-body">
+                    <p class="card-text display-4" id="latest_commits"></p>
+                    <p class="card-text text-muted">Commits</p>
+                </div>
+                <div class="bg-icon"><i class="far fa-file-code"></i></div>
+            </div>
+            <div class="card bg-light">
+                <div class="card-body">
+                    <p class="card-text display-4" id="latest_issues"><a href="#issues" class="text-body text-decoration-none stretched-link"></a></p>
+                    <p class="card-text text-muted">Issues</p>
+                </div>
+                <div class="bg-icon"><i class="fas fa-exclamation-circle"></i></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <h2 class="mt-0" id="commits"><a href="#commits" class="header-link"><span class="fas fa-link" aria-hidden="true"></span></a>Commits</h2>
+                <p>The chart below, shows the commits made to cookietemple over time. Initially, we started developing cookietemple
+                    at the start of 2020.</p>
+                <div class="card bg-light mt-4">
+                    <div class="card-body">
+                        <canvas id="ct_commits" height="200"></canvas>
+                        <p class="card-text small text-muted mt-3 mb-1"><i class="fas fa-info-circle"></i> Data updated every 24 hours at 2:30AM.</p>
+                        <p class="card-text small text-muted mb-1"><i class="fas fa-exclamation-triangle"></i> This only includes commits to the main branch!
+                        </p>
+                        <p class="card-text small text-muted">
+                            <a href="#" data-target="" class="dl_plot_svg text-muted"><i class="fas fa-download"></i> SVGDownNotWork</a>
+                            <a href="#" data-target="commits" class="reset_chart_zoom text-muted"><i class="fas fa-search-minus"></i> Reset zoom</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <h2 class="mt-0" id="prs"><a href="#prs" class="header-link"><span class="fas fa-link" aria-hidden="true"></span></a>Pull requests</h2>
+                <p>This chart shows the closed Github Pull requests over time and the open PRs on that day. Over the time, many new features were added to
+                    cookietemple
+                    through these Pull requests.</p>
+                <div class="card bg-light mt-4">
+                    <div class="card-body">
+                        <canvas id="pull_requests" height="200"></canvas>
+                        <p class="card-text small text-muted mt-3 mb-1"><i class="fas fa-info-circle"></i> Data updated every 24 hours at 2:30AM.</p>
+                        <p class="card-text small text-muted mb-1"><i class="fas fa-exclamation-triangle"></i> This only includes PRs to the default development
+                            branch!
+                        </p>
+                        <p class="card-text small text-muted">
+                            <a href="#" data-target="" class="dl_plot_svg text-muted"><i class="fas fa-download"></i> SVGDownNotWork</a>
+                            <a href="#" data-target="pull_requests" class="reset_chart_zoom text-muted"><i class="fas fa-search-minus"></i> Reset zoom</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <h2 class="mt-0" id="commits"><a href="#issues" class="header-link"><span class="fas fa-link" aria-hidden="true"></span></a>Issues</h2>
+                <p>Issues are an important tool during the development of any software piece. Below chart shows the closed issues over time and the
+                    open issues per day at the cookietemple repository.</p>
+                <div class="card bg-light mt-4">
+                    <div class="card-body">
+                        <canvas id="issues" height="200"></canvas>
+                        <p class="card-text small text-muted mt-3 mb-1"><i class="fas fa-info-circle"></i> Data updated every 24 hours at 2:30AM.</p>
+                        <p class="card-text small text-muted">
+                            <a href="#" data-target="" class="dl_plot_svg text-muted"><i class="fas fa-download"></i> SVGDownNotWork</a>
+                            <a href="#" data-target="issues" class="reset_chart_zoom text-muted"><i class="fas fa-search-minus"></i> Reset zoom</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            /*
+            Parse commit data
+             */
+            const commit_statistics = JSON.parse('{{ commits_data|safe }}');
+            dates_of_commits = []
+            number_of_commits = []
+            for (commit_date in commit_statistics) {
+                dates_of_commits.push(commit_date)
+                number_of_commits.push(commit_statistics[commit_date])
+            }
+            latest_commits = number_of_commits[number_of_commits.length - 1];
+            document.getElementById("latest_commits").innerHTML = latest_commits;
+            /*
+            Parse open PR data
+             */
+            const open_pr_statistics = JSON.parse('{{ open_pr_data|safe }}');
+            let open_pr_data = []
+            for (open_pr in open_pr_statistics) {
+                let data = {x: open_pr, y: open_pr_statistics[open_pr]}
+                open_pr_data.push(data)
+            }
+            /*
+            Parse closed PR data
+             */
+            const closed_pr_statistics = JSON.parse('{{ closed_pr_data|safe }}');
+            let closed_pr_data = []
+            for (closed_pr in closed_pr_statistics) {
+                let data = {x: closed_pr, y: closed_pr_statistics[closed_pr]}
+                closed_pr_data.push(data)
+            }
+            latest_prs = closed_pr_data[closed_pr_data.length - 1].y
+            document.getElementById("latest_prs").innerHTML = latest_prs;
+            /*
+            Parse closed issue data
+             */
+            const closed_issue_statistics = JSON.parse('{{ closed_issue_data|safe }}');
+            let closed_issue_data = []
+            for (closed_issue in closed_issue_statistics) {
+                let data = {x: closed_issue, y: closed_issue_statistics[closed_issue]}
+                closed_issue_data.push(data)
+            }
+            latest_issues = closed_issue_data[closed_issue_data.length - 1].y
+            document.getElementById("latest_issues").innerHTML = latest_issues;
+            /*
+            Parse open issue data
+             */
+            const open_issue_statistics = JSON.parse('{{ open_issue_data|safe }}');
+            let open_issue_data = []
+            for (open_issue in open_issue_statistics) {
+                let data = {x: open_issue, y: open_issue_statistics[open_issue]}
+                open_issue_data.push(data)
+            }
+        </script>
+
+        <script>
+            // Placeholder for chart data
+            var chartData = {};
+            var charts = {};
+
+            // Chart.JS base config
+            var chartjs_base = {
+                type: 'line',
+                fill: 'origin',
+                options: {
+                    responsive: true,
+                    title: {
+                        display: true,
+                        fontSize: 16
+                    },
+                    tooltips: {
+                        mode: 'x'
+                    },
+                    plugins: {
+                        zoom: {
+                            zoom: {
+                                enabled: true,
+                                drag: true,
+                                mode: 'x',
+                                speed: 0.05
+                            }
+                        }
+                    },
+                    hover: {
+                        mode: 'nearest',
+                        intersect: true
+                    },
+                    elements: {
+                        line: {
+                            borderWidth: 1,
+                            tension: 0
+                        }
+                    },
+                    scales: {
+                        yAxes: [{
+                            display: true,
+                            scaleLabel: {
+                                display: true
+                            }
+                        }],
+                        xAxes: [{
+                            type: 'time',
+                            time: {minUnit: 'year'}
+                        }],
+                    },
+                    legend: {
+                        display: false
+                    }
+
+                }
+            };
+
+            chartData['commits'] = JSON.parse(JSON.stringify(chartjs_base));
+            chartData['commits'].data = {
+                labels: dates_of_commits,
+                datasets: [
+                    {
+                        label: 'Commits to cookietemple',
+                        borderColor: '#005fff',
+                        pointRadius: 0,
+                        data: number_of_commits,
+                        fill: true,
+                    }
+                ]
+            };
+            chartData['commits'].options.title.text = 'Commits to cookietemple';
+            chartData['commits'].options.legend = {
+                position: 'bottom',
+                labels: {lineWidth: 1}
+            };
+            var ctx = document.getElementById('ct_commits').getContext('2d');
+            charts['commits'] = new Chart(ctx, chartData['commits']);
+
+            chartData['pull_requests'] = JSON.parse(JSON.stringify(chartjs_base));
+            chartData['pull_requests'].data = {
+                datasets: [
+                    {
+                        label: 'Open PRs',
+                        borderColor: '#00ff00',
+                        pointRadius: 0,
+                        data: open_pr_data,
+                        fill: 'origin'
+                    },
+                    {
+                        label: 'Closed PRs',
+                        borderColor: '#ff0000',
+                        pointRadius: 0,
+                        data: closed_pr_data,
+                    }
+                ]
+            };
+            chartData['pull_requests'].options.title.text = 'GitHub PRs over time';
+            chartData['pull_requests'].options.scales.yAxes = [{stacked: true}];
+            //chartData['pull_requests'].options.elements.line.fill = '-1';
+            chartData['pull_requests'].options.legend = {
+                position: 'bottom',
+                labels: {lineWidth: 1}
+            };
+            var ctx = document.getElementById('pull_requests').getContext('2d');
+            charts['pull_requests'] = new Chart(ctx, chartData['pull_requests']);
+
+            chartData['issues'] = JSON.parse(JSON.stringify(chartjs_base));
+            chartData['issues'].data = {
+                datasets: [
+                    {
+                        label: 'Open Issues',
+                        borderColor: '#00ff00',
+                        pointRadius: 0,
+                        data: open_issue_data
+                    },
+                    {
+                        label: 'Closed Issues',
+                        borderColor: '#ff0000',
+                        pointRadius: 0,
+                        data: closed_issue_data,
+                        fill: 'origin'
+                    }
+                ]
+            };
+            chartData['issues'].options.title.text = 'GitHub Issues over time';
+            //chartData['issues'].options.scales.yAxes = [{stacked: true}];
+            chartData['issues'].options.legend = {
+                position: 'bottom',
+                labels: {lineWidth: 1}
+            };
+            var ctx = document.getElementById('issues').getContext('2d');
+            charts['issues'] = new Chart(ctx, chartData['issues']);
+
+
+            // reset zoom for plots
+            $('.reset_chart_zoom').click(function (e) {
+                e.preventDefault();
+                var target = $(this).data('target');
+                charts[target].resetZoom()
+            });
+        </script>
+    </div>
+</div>
+<footer class="footer">
+    {% include 'footer.html' %}
+</footer>
+</body>
+</html>

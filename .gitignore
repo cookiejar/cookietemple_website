@@ -134,3 +134,5 @@ dmypy.json
 # Coala
 *.orig
 
+# ignore the JSON files generated for testing purposes by running the fetch script locally
+*.json
